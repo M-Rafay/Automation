@@ -1,0 +1,11 @@
+C:\Users\92331\source\repos\Swiftcodefinal\Swiftcodefinal\bin\Debug\netcoreapp2.1\Swiftcodefinal.deps.json
+C:\Users\92331\source\repos\Swiftcodefinal\Swiftcodefinal\bin\Debug\netcoreapp2.1\Swiftcodefinal.runtimeconfig.json
+C:\Users\92331\source\repos\Swiftcodefinal\Swiftcodefinal\bin\Debug\netcoreapp2.1\Swiftcodefinal.runtimeconfig.dev.json
+C:\Users\92331\source\repos\Swiftcodefinal\Swiftcodefinal\bin\Debug\netcoreapp2.1\Swiftcodefinal.dll
+C:\Users\92331\source\repos\Swiftcodefinal\Swiftcodefinal\obj\Debug\netcoreapp2.1\Swiftcodefinal.csproj.CoreCompileInputs.cache
+C:\Users\92331\source\repos\Swiftcodefinal\Swiftcodefinal\obj\Debug\netcoreapp2.1\Swiftcodefinal.AssemblyInfoInputs.cache
+C:\Users\92331\source\repos\Swiftcodefinal\Swiftcodefinal\obj\Debug\netcoreapp2.1\Swiftcodefinal.AssemblyInfo.cs
+C:\Users\92331\source\repos\Swiftcodefinal\Swiftcodefinal\obj\Debug\netcoreapp2.1\Swiftcodefinal.csprojAssemblyReference.cache
+C:\Users\92331\source\repos\Swiftcodefinal\Swiftcodefinal\bin\Debug\netcoreapp2.1\Swiftcodefinal.pdb
+C:\Users\92331\source\repos\Swiftcodefinal\Swiftcodefinal\obj\Debug\netcoreapp2.1\Swiftcodefinal.dll
+C:\Users\92331\source\repos\Swiftcodefinal\Swiftcodefinal\obj\Debug\netcoreapp2.1\Swiftcodefinal.pdb
