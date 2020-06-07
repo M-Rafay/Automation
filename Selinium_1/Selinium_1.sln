@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Selinium_1", "Selinium_1\Selinium_1.csproj", "{7D2C54CD-3E4E-4F3A-95BA-7E6C31D7FFA2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7D2C54CD-3E4E-4F3A-95BA-7E6C31D7FFA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D2C54CD-3E4E-4F3A-95BA-7E6C31D7FFA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D2C54CD-3E4E-4F3A-95BA-7E6C31D7FFA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D2C54CD-3E4E-4F3A-95BA-7E6C31D7FFA2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

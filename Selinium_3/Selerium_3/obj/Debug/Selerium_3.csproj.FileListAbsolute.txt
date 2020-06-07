@@ -1,0 +1,2 @@
+D:\New folder (2)\js internship\Selerium_3\Selerium_3\bin\Debug\Selerium_3.exe.config
+D:\New folder (2)\js internship\Selerium_3\Selerium_3\obj\Debug\Selerium_3.csprojResolveAssemblyReference.cache

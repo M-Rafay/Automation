@@ -1,0 +1,156 @@
+using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+using OpenQA.Selenium.Support.UI;
+using System.IO;
+using Excel = Microsoft.Office.Interop.Excel;
+using System.Data;
+using ExcelDataReader;
+
+namespace mailautomation
+{
+    class Program
+    {
+
+      static void Main(string[] args)
+        {
+            try
+            {
+                IWebDriver driver = new ChromeDriver("./BrowserDriver/Chrome");
+                DataTable resultTable = new DataTable();
+                resultTable = ExcelToDataTable(@"D:\wz\demo.xlsx");
+                //create writer file
+                using (StreamWriter w = File.AppendText(@"D:\wz\log2.txt"))
+                {
+
+
+                    //navigate to gmail
+                    driver.Url = "http://www.gmail.com";
+
+                    // w.WriteLine(DateTime.Now + "Gmail login successfully");
+
+                    driver.Manage().Window.Maximize();
+                    driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
+
+
+                    driver.FindElement(By.Id("identifierId")).SendKeys("narmeenshahid18@gmail.com" + Keys.Enter);
+                    Log("Access to the id narmeenshahid18@gmail.com", w);
+                    Thread.Sleep(2000);
+
+                    driver.FindElement(By.XPath("//*[@class='whsOnd zHQkBf']")).SendKeys("batch2015graduated" + Keys.Enter);
+                    Log("password access successfully", w);
+                    Thread.Sleep(4000);
+
+
+                    //compose mail link
+                    foreach (DataRow row in resultTable.Rows)
+                    {
+                        driver.FindElement(By.XPath("//*[@id=':jr']/div/div")).Click();
+                        Thread.Sleep(3000);
+
+                        string to = row["Column0"].ToString();
+                        string subject = row["Column1"].ToString();
+                        string body = row["Column2"].ToString();
+
+
+                        //to link
+                        driver.FindElement(By.ClassName("vO")).SendKeys(to);
+                        Log("send mail to" + to, w);
+                        Thread.Sleep(2000);
+
+                        //subject link
+                        driver.FindElement(By.ClassName("aoT")).SendKeys(subject);
+                        Log("subject content of" + to + "is" + subject, w);
+                        Thread.Sleep(2000);
+
+                        //body link
+                        driver.FindElement(By.XPath(".//*[contains(@class, 'Am Al editable LW-avf')]")).SendKeys(body);
+                        Log("body content is" +body, w);
+                        Thread.Sleep(2000);
+
+
+
+                        string path = @"C:\Users\DBIntern.Narmeen\emails.txt";
+
+                        //attach file
+                        driver.FindElement(By.XPath("//input[@name='Filedata']")).SendKeys(path);
+                        Log("File attached successfully", w);
+
+                        Thread.Sleep(2000);
+
+
+                        //send link
+                        driver.FindElement(By.XPath(".//*[contains(@class, 'T-I J-J5-Ji aoO v7 T-I-atl L3')]")).Click();
+                         Log("mail send successfully", w);
+                        Thread.Sleep(2000);
+                    }
+
+
+
+                    //id link
+                    driver.FindElement(By.XPath("//*[@id='gb']/div[2]/div[3]/div/div[2]/div")).Click();
+                    Thread.Sleep(2000);
+                    //sign out
+                    driver.FindElement(By.XPath("//*[@id='gb']/div[2]/div[5]/div[4]/div[2]")).Click();
+                    Log("Gmail account logout successfully", w);
+                    Thread.Sleep(2000);
+                    Console.ReadKey();
+
+                    driver.Close();
+                }
+
+
+            }
+
+            catch (Exception e)
+            {
+
+                Console.WriteLine(e);
+            }
+
+
+            Console.ReadKey();
+
+        }
+
+
+ public static  DataTable ExcelToDataTable(string fileName)
+        {
+            
+
+                //open file and returns as Stream 
+                FileStream stream = File.Open(fileName, FileMode.Open, FileAccess.Read);
+                //Createopenxmlreader via ExcelReaderFactory 
+                IExcelDataReader excelReader = ExcelReaderFactory.CreateOpenXmlReader(stream); //.xlsx 
+                //Set the First Row as Column Name 
+
+                //excelReader.IsFirstRowAsColumnNames = true; 
+                //Return as DataSet 
+                DataSet result = excelReader.AsDataSet();
+                //Get all the Tables 
+                DataTableCollection table = result.Tables;
+                //Store it in DataTable 
+                DataTable resultTable = table["Sheet1"];
+
+                return resultTable;
+            }
+
+public static void Log(string logMessage, TextWriter w)
+    {
+        w.Write("\r\nLog Entry : ");
+        w.WriteLine(DateTime.Now +":"+logMessage);
+        w.WriteLine ("-------------------------------");
+    }
+
+
+
+    }
+}
+    
+
+
